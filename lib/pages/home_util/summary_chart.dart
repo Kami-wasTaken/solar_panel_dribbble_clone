@@ -1,6 +1,9 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:solar_panel_dribbble_clone/pages/home_util/consumption_div.dart';
+import 'package:solar_panel_dribbble_clone/pages/home_util/line_chart.dart';
 import 'time_filter.dart';
 
 class SummaryChart extends StatefulWidget {
@@ -50,7 +53,7 @@ class _SummaryChartState extends State<SummaryChart> {
           color: Colors.black87,
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 30.0),
+          padding: const EdgeInsets.symmetric(horizontal: 34.0, vertical: 40.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -86,7 +89,7 @@ class _SummaryChartState extends State<SummaryChart> {
               // time Filter
 
               Padding(
-                padding: const EdgeInsets.only(top: 25.0),
+                padding: const EdgeInsets.only(top: 25.0, bottom: 20.0),
                 child: SizedBox(
                   height: 35,
                   child: ListView.separated(
@@ -105,6 +108,19 @@ class _SummaryChartState extends State<SummaryChart> {
                       }),
                 ),
               ),
+
+              //progress chart
+              ProgressChartWidget(),
+
+              //division of consumption
+              Padding(
+                padding: const EdgeInsets.only(top: 25.0),
+                child: ConsumptionDiv(division: [
+                  ["175 KW/H", "Produced"],
+                  ["22 KW/H", "Exported"],
+                  ["42 KW/H", "Used in battery"]
+                ]),
+              )
             ],
           ),
         ),

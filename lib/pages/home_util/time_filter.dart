@@ -17,7 +17,7 @@ class TimeFilter extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 78,
+        width: 82,
         height: 35,
         decoration: BoxDecoration(
             color: isSelected ? Colors.white : null,
