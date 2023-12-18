@@ -45,7 +45,7 @@ class _SummaryChartState extends State<SummaryChart> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 55.0, horizontal: 8),
+      padding: const EdgeInsets.only(top: 55.0, left: 8, right: 8),
       child: Container(
         alignment: Alignment(0, 0),
         decoration: BoxDecoration(

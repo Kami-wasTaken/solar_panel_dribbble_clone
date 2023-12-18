@@ -14,13 +14,25 @@ class HomePage extends StatelessWidget {
       children: [
         SummaryChart(),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("Device"),
-              Text("Sort by"),
+              Text(
+                "Device",
+                style: GoogleFonts.redHatDisplay(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                "Sort by",
+                style: GoogleFonts.redHatDisplay(
+                  fontSize: 16,
+                  color: Colors.grey[850],
+                ),
+              ),
             ],
           ),
         ),
