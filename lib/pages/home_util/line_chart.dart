@@ -3,7 +3,9 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class ProgressChartWidget extends StatelessWidget {
-  const ProgressChartWidget({super.key});
+  const ProgressChartWidget({super.key, required this.maxTime});
+
+  final double maxTime;
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +27,11 @@ class ProgressChartWidget extends StatelessWidget {
             right: BorderSide(color: Colors.transparent),
             bottom: BorderSide(color: Color.fromARGB(255, 69, 69, 69)),
           )),
+          clipData: FlClipData.all(),
           minX: 0,
           minY: 0,
-          maxX: 50,
-          maxY: 50,
+          maxX: maxTime,
+          maxY: 55,
           lineBarsData: [
             LineChartBarData(
               spots: [
@@ -41,7 +44,17 @@ class ProgressChartWidget extends StatelessWidget {
                 FlSpot(40, 50),
                 FlSpot(45, 20),
                 FlSpot(50, 30),
+                FlSpot(60, 3),
+                FlSpot(65, 50),
+                FlSpot(73, 20),
+                FlSpot(90, 30),
+                FlSpot(100, 10),
+                FlSpot(110, 10),
+                FlSpot(140, 50),
+                FlSpot(190, 20),
+                FlSpot(200, 30),
               ],
+
               color: const Color.fromARGB(255, 136, 215, 139),
 
               isCurved: true,

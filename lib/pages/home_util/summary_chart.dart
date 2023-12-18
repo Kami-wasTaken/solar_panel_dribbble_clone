@@ -14,6 +14,7 @@ class SummaryChart extends StatefulWidget {
 }
 
 class _SummaryChartState extends State<SummaryChart> {
+  double timeScale = 50;
   final List timeFilter = [
     [
       'Day',
@@ -39,6 +40,17 @@ class _SummaryChartState extends State<SummaryChart> {
         timeFilter[i][1] = false;
       }
       timeFilter[index][1] = true;
+      switch (timeFilter[index][0]) {
+        case "Day":
+          timeScale = 50.0;
+        case "Week":
+          timeScale = 80.0;
+        case "Month":
+          timeScale = 150.0;
+        case "Year":
+          timeScale = 200.0;
+      }
+      print(timeScale);
     });
   }
 
@@ -110,7 +122,7 @@ class _SummaryChartState extends State<SummaryChart> {
               ),
 
               //progress chart
-              ProgressChartWidget(),
+              ProgressChartWidget(maxTime: timeScale),
 
               //division of consumption
               Padding(

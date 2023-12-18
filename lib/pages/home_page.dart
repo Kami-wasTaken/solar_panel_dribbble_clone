@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:solar_panel_dribbble_clone/pages/home_util/drop_down.dart';
 import 'home_util/summary_chart.dart';
 
 class HomePage extends StatelessWidget {
@@ -26,21 +27,21 @@ class HomePage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text(
-                "Sort by",
-                style: GoogleFonts.redHatDisplay(
-                  fontSize: 16,
-                  color: Colors.grey[850],
-                ),
+              Row(
+                children: [
+                  Text(
+                    "Sort by",
+                    style: GoogleFonts.redHatDisplay(
+                      fontSize: 16,
+                      color: Colors.grey[850],
+                    ),
+                  ),
+                  DropDown(),
+                ],
               ),
             ],
           ),
         ),
-
-        //Energy consumed
-        //Day, week, month, year
-        // Graph
-        // Summary
 
         // Devices
       ],
